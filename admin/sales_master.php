@@ -74,7 +74,7 @@ include "../user/connection.php";
                                 <label>کمپانی محصول</label>
                                 <select class="span11" name="company_name" id="company_name"
                                         onchange="select_company(this.value)">
-                                        <option>select</option>
+                                        <option>انتخاب</option>
                                         <?php
                                         $res=mysqli_query($link,"SELECT * FROM company_name");
                                          while($row=mysqli_fetch_array($res)){
