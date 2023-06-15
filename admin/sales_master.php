@@ -3,7 +3,7 @@ include "header.php";
 include "../user/connection.php";
 ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <div id="content">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <div id="content">
         <!--breadcrumbs-->
         <div id="content-header">
             <div id="breadcrumb"><a href="index.html" class="tip-bottom"><i class="icon-home"></i>
@@ -167,33 +167,10 @@ include "../user/connection.php";
                 <div class="span12">
                     <center><h4>محصولات گرفته شده</h4></center>
 
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>کمپانی محصول</th>
-                            <th>نام محصول</th>
-                            <th>واحد محصول</th>
-                            <th>اندازه محصول</th>
-                            <th>قیمت محصول</th>
-                            <th>تعداد محصول</th>
-                            <th>کل</th>
-                            <th>ویرایش</th>
-                            <th>حذف</th>
-                        </tr>
-                        <tr>
-                            <td>Amul</td>
-                            <td>Buutter</td>
-                            <td>Grams</td>
-                            <td>500</td>
-                            <td>10</td>
-                            <td>5</td>
-                            <td>50</td>
-                            <td style="color: green">ویرایش</td>
-                            <td style="color:red">حذف</td>
-                        </tr>
-                    </table>
+                    <div id="bill_products"></div>                     
 
                     <h4>
-                        <div style="float: right"><span style="float:left;">Total:&#8377;</span><span style="float: left">525</span></div>
+                        <div style="float: right"><span style="float:left;">Total:&#8377;</span><span style="float: left" id="totalbill">0</span></div>
                     </h4>
 
 
@@ -278,9 +255,11 @@ function add_session(){
         xmlhttp.onreadystatechange= function (){
             if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
                 if(xmlhttp.responseText==""){
+                    load_billing_products();
                     alert("product_added successfully");
                 }
                 else{
+                    load_billing_products();
                     alert(xmlhttp.responseText);
                 }
             } 
@@ -289,6 +268,76 @@ function add_session(){
         xmlhttp.send();
 }
 
+function load_billing_products(){
+    var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange= function (){
+            if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                document.getElementById("bill_products").innerHTML=xmlhttp.responseText;
+                load_total_bill();
+            } 
+        };
+        xmlhttp.open("GET","forajax/load_billing_products.php",true);
+        xmlhttp.send();
+}
+
+function load_total_bill(){
+    var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange= function (){
+            if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                document.getElementById("totalbill").innerHTML=xmlhttp.responseText;
+            } 
+        };
+        xmlhttp.open("GET","forajax/load_billing_amount.php",true);
+        xmlhttp.send();
+}
+
+load_billing_products();
+
+function edit_qty(qty1,company_name1,product_name1,unit1,packing_size1,price1){
+    var product_company=company_name1;
+    var product_name=product_name1;
+    var unit=unit1;
+    var packing_size=packing_size1;
+    var price=price1;
+    var qty=qty1;
+    var total=eval(price)*eval(qty);
+
+    var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange= function (){
+            if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                if(xmlhttp.responseText==""){
+                    load_billing_products();
+                    alert("product_added successfully");
+                }
+                else{
+                    load_billing_products();
+                    alert(xmlhttp.responseText);
+                }
+            } 
+        };
+        xmlhttp.open("GET","forajax/update_in_session.php?company_name="+product_company+"&product_name="+product_name+"&unit="+unit+"&packing_size="+packing_size+"&price="+price+"&qty="+qty+"&total="+total,true);
+        xmlhttp.send();
+        
+}
+
+    function delete_qty(sessionid){
+
+    var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange= function (){
+            if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                if(xmlhttp.responseText==""){
+                    load_billing_products();
+                    alert("product_added successfully");
+                }
+                else{
+                    load_billing_products();
+                    alert(xmlhttp.responseText);
+                }
+            } 
+        };
+        xmlhttp.open("GET","forajax/delete_in_session.php?sessionid="+sessionid,true);
+        xmlhttp.send();
+    }
 </script>
 
 
