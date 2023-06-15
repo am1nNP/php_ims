@@ -21,7 +21,7 @@
                 }
                 
             }
-            $gtotal=$gtotal+($qty_session*$price_session);
+            $gtotal = $gtotal + ($qty_session * intval($price_session));
         }
     }
     echo $gtotal;

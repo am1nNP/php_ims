@@ -36,7 +36,7 @@
                 <li class="divider"></li>
                 <li><a href="#"><i class="icon-check"></i> ماموریت های من</a></li>
                 <li class="divider"></li>
-                <li><a href="login.html"><i class="icon-key"></i> خروج</a></li>
+                <li><a href="index.php"><i class="icon-key"></i> خروج</a></li>
             </ul>
         </li>
 
@@ -48,7 +48,7 @@
 <div id="sidebar">
     <ul>
         <li class="active">
-            <a href="index.html"><i class="icon icon-home"></i><span>داشبورد</span></a>
+            <a href="demo.php"><i class="icon icon-home"></i><span>داشبورد</span></a>
         </li>
 
         <li class="">
@@ -90,6 +90,6 @@
 <!--sidebar-menu-->
 <div id="search">
 
-        <a href="index.html" style="color:white"><i class="icon icon-share-alt"></i><span>خروج</span></a>
+        <a href="index.php" style="color:white"><i class="icon icon-share-alt"></i><span>خروج</span></a>
 
 </div>
