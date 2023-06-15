@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2023 at 11:39 AM
+-- Generation Time: Jun 15, 2023 at 12:26 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `company_name` (
   `id` int(5) NOT NULL,
-  `company_name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `company_name` varchar(100) COLLATE utf8_persian_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
 -- Dumping data for table `company_name`
@@ -49,13 +49,13 @@ INSERT INTO `company_name` (`id`, `company_name`) VALUES
 
 CREATE TABLE `party_info` (
   `id` int(5) NOT NULL,
-  `firstname` varchar(50) NOT NULL,
-  `lastname` varchar(50) NOT NULL,
-  `businessname` varchar(100) NOT NULL,
-  `contact` varchar(20) NOT NULL,
-  `address` varchar(500) NOT NULL,
-  `city` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `firstname` varchar(50) COLLATE utf8_persian_ci NOT NULL,
+  `lastname` varchar(50) COLLATE utf8_persian_ci NOT NULL,
+  `businessname` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `contact` varchar(20) COLLATE utf8_persian_ci NOT NULL,
+  `address` varchar(500) COLLATE utf8_persian_ci NOT NULL,
+  `city` varchar(50) COLLATE utf8_persian_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
 -- Dumping data for table `party_info`
@@ -73,11 +73,11 @@ INSERT INTO `party_info` (`id`, `firstname`, `lastname`, `businessname`, `contac
 
 CREATE TABLE `products` (
   `id` int(5) NOT NULL,
-  `company_name` varchar(100) NOT NULL,
-  `product_name` varchar(100) NOT NULL,
-  `unit` varchar(50) NOT NULL,
-  `packing_size` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `company_name` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `product_name` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `unit` varchar(50) COLLATE utf8_persian_ci NOT NULL,
+  `packing_size` varchar(20) COLLATE utf8_persian_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
 -- Dumping data for table `products`
@@ -99,16 +99,16 @@ INSERT INTO `products` (`id`, `company_name`, `product_name`, `unit`, `packing_s
 
 CREATE TABLE `purchase_master` (
   `id` int(5) NOT NULL,
-  `company_name` varchar(100) NOT NULL,
-  `product_name` varchar(100) NOT NULL,
-  `unit` varchar(50) NOT NULL,
-  `packing_size` varchar(20) NOT NULL,
-  `quantity` varchar(10) NOT NULL,
-  `price` varchar(10) NOT NULL,
-  `party_name` varchar(100) NOT NULL,
-  `purchase_type` varchar(100) NOT NULL,
+  `company_name` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `product_name` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `unit` varchar(50) COLLATE utf8_persian_ci NOT NULL,
+  `packing_size` varchar(20) COLLATE utf8_persian_ci NOT NULL,
+  `quantity` varchar(10) COLLATE utf8_persian_ci NOT NULL,
+  `price` varchar(10) COLLATE utf8_persian_ci NOT NULL,
+  `party_name` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `purchase_type` varchar(100) COLLATE utf8_persian_ci NOT NULL,
   `expiry_date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
 -- Dumping data for table `purchase_master`
@@ -141,13 +141,13 @@ INSERT INTO `purchase_master` (`id`, `company_name`, `product_name`, `unit`, `pa
 
 CREATE TABLE `stock_master` (
   `id` int(5) NOT NULL,
-  `product_company` varchar(100) NOT NULL,
-  `product_name` varchar(100) NOT NULL,
-  `product_unit` varchar(50) NOT NULL,
-  `packing_size` varchar(100) NOT NULL,
-  `product_qty` varchar(5) NOT NULL,
-  `product_selling_price` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `product_company` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `product_name` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `product_unit` varchar(50) COLLATE utf8_persian_ci NOT NULL,
+  `packing_size` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `product_qty` varchar(5) COLLATE utf8_persian_ci NOT NULL,
+  `product_selling_price` varchar(10) COLLATE utf8_persian_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
 -- Dumping data for table `stock_master`
@@ -166,8 +166,8 @@ INSERT INTO `stock_master` (`id`, `product_company`, `product_name`, `product_un
 
 CREATE TABLE `units` (
   `id` int(5) NOT NULL,
-  `unit` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `unit` varchar(100) COLLATE utf8_persian_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
 -- Dumping data for table `units`
@@ -185,13 +185,13 @@ INSERT INTO `units` (`id`, `unit`) VALUES
 
 CREATE TABLE `user_registration` (
   `id` int(5) NOT NULL,
-  `firstname` varchar(50) NOT NULL,
-  `lastname` varchar(50) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `role` varchar(10) NOT NULL,
-  `status` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `firstname` varchar(50) COLLATE utf8_persian_ci NOT NULL,
+  `lastname` varchar(50) COLLATE utf8_persian_ci NOT NULL,
+  `username` varchar(50) COLLATE utf8_persian_ci NOT NULL,
+  `password` varchar(50) COLLATE utf8_persian_ci NOT NULL,
+  `role` varchar(10) COLLATE utf8_persian_ci NOT NULL,
+  `status` varchar(10) COLLATE utf8_persian_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
 -- Dumping data for table `user_registration`
