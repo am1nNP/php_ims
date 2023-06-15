@@ -16,6 +16,7 @@ if(isset($_SESSION['cart'])){
     $check_available=check_duplicate_product($company_name,$product_name,$unit,$packing_size);
     $available_qty=0;
     $check_the_qty=0;
+    
     if($check_available==0){
         $available_qty=check_qty($company_name,$product_name,$unit,$packing_size,$link);
         if($available_qty>=$qty){
@@ -38,7 +39,7 @@ if(isset($_SESSION['cart'])){
             $_SESSION['cart'][$check_product_no_session]=$b;
         }
         else{
-            echo "entered qty is not ";
+            echo "entered qty is not available";
         }
     }
 }
@@ -89,7 +90,7 @@ function check_duplicate_product($product_company,$product_name,$product_unit,$p
                     $packing_size_session=$val;
                 }
             }
-            if($company_name_session=$product_company && $product_name_session=$product_name && $unit_session=$product_unit && $packing_size_session=$packing_size){
+            if($company_name_session==$product_company && $product_name_session==$product_name && $unit_session==$product_unit && $packing_size_session==$packing_size){
                 $found=$found+1;
             }
         }
@@ -124,7 +125,7 @@ function check_the_qty($product_company,$product_name,$product_unit,$packing_siz
                 }
                 
             }
-            if($company_name_session=$product_company && $product_name_session=$product_name && $unit_session=$product_unit && $packing_size_session=$packing_size){
+            if($company_name_session==$product_company && $product_name_session==$product_name && $unit_session==$product_unit && $packing_size_session==$packing_size){
                 $qty_found=$qty_session;
             }
         }
@@ -155,7 +156,7 @@ function check_product_no_session($product_company,$product_name,$product_unit,$
                     $packing_size_session=$val;
                 }
             }
-            if($company_name_session=$product_company && $product_name_session=$product_name && $unit_session=$product_unit && $packing_size_session=$packing_size){
+            if($company_name_session==$product_company && $product_name_session==$product_name && $unit_session==$product_unit && $packing_size_session==$packing_size){
                 $recordno=$i;
             }
         }
