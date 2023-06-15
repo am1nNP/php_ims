@@ -58,8 +58,8 @@
             <td><?= $unit_session;?></td>
             <td><?= $packing_size_session;?></td>
             <td><?= $price_session;?></td>
-            <td><input type="text" id="tt<?php echo $i;?>" value="<?= $qty_session;?>"><i class="fa fa-refresh" style="font-size:24px; margin-left:5px;" onclick="edit_qty(document.getElementById('tt<?php echo $i;?>').value,'<?php echo $company_name_session ?>','<?= $product_name_session?>','<?= $unit_session?>','<?= $packing_size_session?>','<?= $price_session?>')"></i></td>
-            <td><?= ($qty_session*$price_session);?></td>
+            <td><input type="text" id="tt<?php echo $i;?>" value="<?= $qty_session;?>"><i class="fa fa-refresh" style="font-size:24px; margin-left:5px;" onclick="edit_qty(document.getElementById('tt<?php echo $i;?>').value,'<?php echo $company_name_session; ?>','<?= $product_name_session;?>','<?= $unit_session;?>','<?= $packing_size_session;?>','<?= $price_session;?>')"></i></td>
+            <td><?php echo($qty_session*$price_session);?></td>
             <td style="color:red; cursor: pointer;" onclick="delete_qty('<?= $i ?>')">حذف</td>
         </tr>
         <?php
