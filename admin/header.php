@@ -75,16 +75,10 @@
         <li class="">
             <a href="./stock_master.php"><i class="icon icon-user"></i><span>انبار</span></a>
         </li>
-
-        <li class="submenu"><a href="#"><i class="icon icon-th-list"></i> <span>فرم ها</span> <span
-                class="label label-important">3</span></a>
-            <ul>
-                <li><a href="form-common.html">فرم ابتدایی</a></li>
-                <li><a href="form-validation.html">فرم همراه با اعتبارسنجی</a></li>
-                <li><a href="form-wizard.html">فرم ویزاردی </a></li>
-            </ul>
+        <li class="">
+            <a href="./view_bills.php"><i class="icon icon-user"></i><span>لیست فروش </span><span
+                class="label label-important">New</span></a></a>
         </li>
-
     </ul>
 </div>
 <!--sidebar-menu-->
