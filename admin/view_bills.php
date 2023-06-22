@@ -49,7 +49,7 @@ function get_total($bill_id,$link){
     $total=0;
     $res=mysqli_query($link,"SELECT * FROM billing_details WHERE bill_id=$bill_id");
     while($row=mysqli_fetch_array($res)){
-        $total=$total+($row["price"]+$row["qty"]);
+        $total=$total+($row["price"] * $row["qty"]);
     }
     return $total;
 }

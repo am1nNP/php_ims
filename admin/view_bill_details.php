@@ -61,6 +61,7 @@ while($row=mysqli_fetch_array($res)){
                 <th>کل</th>
             </tr>
             <?php
+            $total=0;
             $res=mysqli_query($link,"SELECT * FROM billing_details WHERE bill_id=$id");
             while($row=mysqli_fetch_array($res)){
                 echo"<tr>";
@@ -72,9 +73,13 @@ while($row=mysqli_fetch_array($res)){
                 echo"<td>";echo $row["qty"];echo"</td>";
                 echo"<td>";echo ($row["price"]*$row["qty"]);echo"</td>";
                 echo"</tr>";
+                $total=$total+($row["price"]* $row["qty"]);
             }
             ?>
         </table>
+        <div align="right" style="font-weight: bold;">
+            مجموع کل:<?php echo $total;?>
+        </div>
             </div>
     </div>
 </div>
