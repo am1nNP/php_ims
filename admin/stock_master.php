@@ -28,6 +28,7 @@ include "../user/connection.php";
                   <th>موجودی محصول</th>
                   <th>قیمت فروش محصول</th>
                   <th>ویرایش</th>
+                  <th>حذف</th>
                 </tr>
               </thead>
               <tbody>
@@ -46,6 +47,7 @@ include "../user/connection.php";
                   <td><?php echo $row["product_qty"];?></td>
                   <td><?php echo $row["product_selling_price"];?></td>
                   <td><center><a style="color:#00A86B;font-weight:bolder;" href="edit_stock_master.php?id=<?=$row["id"];?>">ویرایش</a></center></td>                  
+                  <td><center><a style="color:#ffaa20;font-weight:bolder;" href="delete_stock_master.php?id=<?=$row["id"];?>">حذف</a></center></td>                  
                 </tr>
                     <?php
                 }
