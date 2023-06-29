@@ -48,7 +48,7 @@
 <div id="sidebar">
     <ul>
         <li class="active">
-            <a href="index.html"><i class="icon icon-home"></i><span>داشبورد</span></a>
+            <a href="demo.php"><i class="icon icon-home"></i><span>داشبورد</span></a>
         </li>
 
         <li class="">
@@ -84,6 +84,6 @@
 <!--sidebar-menu-->
 <div id="search">
 
-        <a href="index.html" style="color:white"><i class="icon icon-share-alt"></i><span>خروج</span></a>
+        <a href="index.php" style="color:white"><i class="icon icon-share-alt"></i><span>خروج</span></a>
 
 </div>

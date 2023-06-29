@@ -14,7 +14,7 @@ while($row=mysqli_fetch_array($res)){
     <div id="content-header">
         <form name="form1" action="" method="post" class="form-horizontal nopadding">
 
-            <div id="breadcrumb"><a href="index.html" class="tip-bottom"><i class="icon-home"></i>
+            <div id="breadcrumb"><a href="demo.php" class="tip-bottom"><i class="icon-home"></i>
                     فروش محصولات</a></div>
             </div>
 
